@@ -1,5 +1,4 @@
-// 10 eventListners
-addEventListener('mouseover', (event) => { event.target.style.backgroundColor = 'blue';});
+// eventListners
 
 addEventListener('keydown', (event) => { event.target.style.backgroundColor = 'blue';});
 
@@ -20,8 +19,11 @@ addEventListener('select', (event) => { event.target.style.backgroundColor = 'bl
 addEventListener('dblclick', (event) => { event.target.style.backgroundColor = 'blue';});
 
 
-// Navigation refresh prevention
-addEventListener('mouseover', (event) => { event.preventDefault()});
+// Navigation eventListener and refresh prevention
+let mainNav = document.querySelector('.main-navigation');
+mainNav.addEventListener('mouseover', (event) => { event.target.style.backgroundColor = 'darkgray';});
+
+mainNav.addEventListener('mouseover', (event) => { event.preventDefault()});
 
 // Stop propagation from bubbling
 addEventListener('mouseover', (event) => { event.stopPropagation()});
