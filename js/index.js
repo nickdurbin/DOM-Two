@@ -11,6 +11,7 @@ const nav = document.querySelector('.nav');
 const footer = document.querySelector('.footer');
 const fun = document.querySelector('#fun');
 const anchor = document.querySelectorAll('.nav a');
+const destination = document.querySelectorAll('.destination');
 
 
 // 10 Event Listeners
@@ -22,7 +23,6 @@ anchor.forEach(tag => tag.addEventListener('click', (event) => {
 }));
 
 paragraph.forEach(tag => tag.addEventListener('mouseleave', (event) => {
-  event.stopPropagation()
   event.target.style.color = 'purple';
 }));
 
@@ -41,6 +41,11 @@ fun.addEventListener('mousedown', (event) => { event.target.style.fontSize = '4r
 footer.addEventListener('dblclick', (event) => { event.target.innerHTML = 'Changed';});
 
 button.addEventListener('click', (event) => { event.target.style.transform = 'scale(1.2)';});
+
+destination.forEach(section => section.addEventListener('click', (event) => {
+  event.stopPropagation()
+  event.target.style.backgroundColor = "lightblue";
+}));
 
 // GSAP interactions
 const tl = new TimelineMax();
