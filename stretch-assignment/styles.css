@@ -1,6 +1,7 @@
 body {
   display: flex;
-  /*justify-content: center;*/
+  background: url(./mars.jpg) center center no-repeat;
+  object-fit: fill;
 }
 
 .blocks {
