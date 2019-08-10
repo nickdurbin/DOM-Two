@@ -1,54 +1,40 @@
-function moveRocket() {
-  let leftPosition = 0; 
-  let rocket = document.querySelector('.block');
-  let time = setInterval(moveLeft, 10);
+let rockets = document.querySelectorAll('.block');
+let currentPosition = 0;
+let goingToMars;
 
-  function moveLeft() {
-      if(leftPosition >= 150) {
-          clearInterval(time);
-          time = setInterval(moveDown, 5);
-      }
-      else {
-          leftPosition += 1;
-          rocket.style.left = leftPosition+'px';
-      }
-  }
+rockets.forEach(move => move.addEventListener('mousedown', (event) => {
+  goingToMars = true;
   
-  bottomPosition = 1000;
-  
-  function moveDown(){
-      if(bottomPosition == 0){
-          clearInterval(time);
-          time = setInterval(moveRight, 10);
+  let rocketPosition = 10;
+    addDistance();
+
+    function addDistance() {
+      time = setTimeout(moveRight, 10);
+    }
+
+    function removeDistance() {
+      time = setTimeout(moveLeft, 10);
+    }
+
+    function moveLeft() {
+      if (rocketPosition > 10) {
+        rocketPosition--;
+        event.target.style.marginLeft = `${rocketPosition}px`;
+        removeDistance();
       }
-      else{
-          bottomPosition -= 1;
-          rocket.style.bottom = bottomPosition+'px';
+    }
+
+    function moveRight() {
+      if (goingToMars) {
+        rocketPosition++;
+        event.target.style.marginLeft = `${rocketPosition}px`;
+        addDistance();
+      } else {
+        moveLeft();
       }
-  }
-  
-  let rightPosition = 1000;
-  
-  function moveRight() {
-     if(rightPosition == 0) {
-         clearInterval(time);
-         time = setInterval(moveUp, 20);
-     }
-     else {
-         rightPosition -= 1;
-         rocket.style.left = rightPosition+'px';
-     }
-  }
-  
-   let topPosition = 1000;
-  
-  function moveUp(){
-      if(topPosition == 0) {
-         clearInterval(time);
-      }
-      else{
-         topPosition -= 1;
-         rocket.style.top = topPosition+'px';
-      }
-  }
-};
+    }
+}))
+
+rockets.forEach(stop => stop.addEventListener('mouseup', function () {
+  goingToMars = false;
+}))
