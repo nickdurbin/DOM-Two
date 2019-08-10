@@ -1,19 +1,18 @@
 let rockets = document.querySelectorAll('.block');
-let currentPosition = 10;
-let goingToMars; 
-
+let currentPosition = 0;
+let goingToMars;
 
 rockets.forEach(move => move.addEventListener('mousedown', (event) => {
   goingToMars = true;
   
   let rocketPosition = 10;
-    timerAdd();
+    addDistance();
 
-    function timerAdd() {
+    function addDistance() {
       time = setTimeout(moveRight, 10);
     }
 
-    function timerSubtract() {
+    function removeDistance() {
       time = setTimeout(moveLeft, 10);
     }
 
@@ -21,7 +20,7 @@ rockets.forEach(move => move.addEventListener('mousedown', (event) => {
       if (rocketPosition > 10) {
         rocketPosition--;
         event.target.style.marginLeft = `${rocketPosition}px`;
-        timerSubtract();
+        removeDistance();
       }
     }
 
@@ -29,14 +28,13 @@ rockets.forEach(move => move.addEventListener('mousedown', (event) => {
       if (goingToMars) {
         rocketPosition++;
         event.target.style.marginLeft = `${rocketPosition}px`;
-        timerAdd();
+        addDistance();
       } else {
         moveLeft();
       }
-      
     }
 }))
 
-rockets.forEach(stop => stop.addEventListener('mouseup', (event) => {
+rockets.forEach(stop => stop.addEventListener('mouseup', function () {
   goingToMars = false;
 }))
