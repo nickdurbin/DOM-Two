@@ -1,3 +1,4 @@
+// 
 let rockets = document.querySelectorAll('.block');
 let currentPosition = 0;
 let goingToMars;
@@ -48,36 +49,36 @@ const blockGray = document.querySelector('.block--gray');
 // On click, moves the block clicked to the top
 blockRed.addEventListener('click', (event) => {
   event.target.style.order = 1;
-  blockBlue.style.order = '';
-  blockGreen.style.order = '';
-  blockPink.style.order = '';
-  blockGray.style.order = '';
+  blockBlue.style.order += 1;
+  blockGreen.style.order += 1;
+  blockPink.style.order += 1;
+  blockGray.style.order += 1;
 });
 blockBlue.addEventListener('click', (event) => {
   event.target.style.order = 1;
-  blockRed.style.order = '';
-  blockGreen.style.order = '';
-  blockPink.style.order = '';
-  blockGray.style.order = '';
+  blockRed.style.order += 1;
+  blockGreen.style.order += 1;
+  blockPink.style.order += 1;
+  blockGray.style.order += 1;
 });
 blockGreen.addEventListener('click', (event) => {
   event.target.style.order = 1;
-  blockRed.style.order = '';
-  blockBlue.style.order = '';
-  blockPink.style.order = '';
-  blockGray.style.order = '';
+  blockRed.style.order += 1;
+  blockBlue.style.order += 1;
+  blockPink.style.order += 1;
+  blockGray.style.order += 1;
 });
 blockPink.addEventListener('click', (event) => {
   event.target.style.order = 1;
-  blockBlue.style.order = '';
-  blockRed.style.order = '';
-  blockGreen.style.order = '';
-  blockGray.style.order = '';
+  blockBlue.style.order += 1;
+  blockRed.style.order += 1;
+  blockGreen.style.order += 1;
+  blockGray.style.order += 1;
 });
 blockGray.addEventListener('click', (event) => {
   event.target.style.order = 1;
-  blockBlue.style.order = '';
-  blockRed.style.order = '';
-  blockGreen.style.order = '';
-  blockPink.style.order = '';
+  blockBlue.style.order += 1;
+  blockRed.style.order += 1;
+  blockGreen.style.order += 1;
+  blockPink.style.order += 1;
 });
