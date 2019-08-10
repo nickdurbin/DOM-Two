@@ -1,67 +1,42 @@
-function moveRocket() {
-  let rocket = document.querySelectorAll('.block');
-  let leftPosition = 0;
-  let time = setInterval(10)
+let rockets = document.querySelectorAll('.block');
+let currentPosition = 10;
+let goingToMars; 
 
-  rocket.forEach(grab => grab.addEventListener('mouseup', event =>
-        (event.target.animate = function moveLeft() {
-        if (leftPosition >= 1000) {
-            clearInterval(time);
-            time = setInterval(moveRight, 20);
-        } else {
-            leftPosition += 1;
-            rocket.style.left = leftPosition + 'px';
-        }
-    })
-    )
-  );
 
-  let bottomPosition = 1000;
+rockets.forEach(move => move.addEventListener('mousedown', (event) => {
+  goingToMars = true;
+  
+  let rocketPosition = 10;
+    timerAdd();
 
-  rocket.forEach(grab =>
-    grab.addEventListener(
-      'click',
-      event =>
-        (event.target.animate = function moveDown() {
-          if (bottomPosition == 0) {
-            clearInterval(time);
-            time = setInterval(moveUp, 1000);
-          } else {
-            bottomPosition -= 1;
-            rocket.style.bottom = bottomPosition + 'px';
-          }
-        })
-    )
-  );
-
-  let rightPosition = 1000;
-
-  rocket.forEach(grab =>
-    grab.addEventListener(
-      'mousedown',
-      event =>
-        (event.target.animate = function moveRight() {
-          if (rightPosition == 1000) {
-            clearInterval(time);
-            time = setInterval(moveLeft, 20);
-          } else {
-            rightPosition -= 1;
-            rocket.style.left = rightPosition + 'px';
-          }
-        })
-    )
-  );
-
-  let topPosition = 1000;
-
-  function moveUp() {
-    if (topPosition == 0) {
-      clearInterval(time);
-    } else {
-      topPosition -= 1000;
-      rocket.style.top = topPosition + 'px';
+    function timerAdd() {
+      time = setTimeout(moveRight, 10);
     }
-  }
-}
 
-moveRocket();
+    function timerSubtract() {
+      time = setTimeout(moveLeft, 10);
+    }
+
+    function moveLeft() {
+      if (rocketPosition > 10) {
+        rocketPosition--;
+        event.target.style.marginLeft = `${rocketPosition}px`;
+        timerSubtract();
+      }
+    }
+
+    function moveRight() {
+      if (goingToMars) {
+        rocketPosition++;
+        event.target.style.marginLeft = `${rocketPosition}px`;
+        timerAdd();
+      } else {
+        moveLeft();
+      }
+      
+    }
+}))
+
+rockets.forEach(stop => stop.addEventListener('mouseup', (event) => {
+  goingToMars = false;
+}))
