@@ -18,20 +18,25 @@ body {
 
 .block--red {
   background-color: red;
+  order: 2;
 }
 
 .block--blue {
   background-color: blue;
+  order: 3;
 }
 
 .block--green {
   background-color: green;
+  order: 4;
 }
 
 .block--pink {
   background-color: pink;
+  order: 5;
 }
 
 .block--gray {
   background-color: gray;
+  order: 6;
 }

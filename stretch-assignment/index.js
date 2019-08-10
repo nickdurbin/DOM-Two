@@ -38,3 +38,46 @@ rockets.forEach(move => move.addEventListener('mousedown', (event) => {
 rockets.forEach(stop => stop.addEventListener('mouseup', function () {
   goingToMars = false;
 }))
+
+const blockRed = document.querySelector('.block--red');
+const blockBlue = document.querySelector('.block--blue');
+const blockGreen = document.querySelector('.block--green');
+const blockPink = document.querySelector('.block--pink');
+const blockGray = document.querySelector('.block--gray');
+
+// On click, moves the block clicked to the top
+blockRed.addEventListener('click', (event) => {
+  event.target.style.order = 1;
+  blockBlue.style.order = '';
+  blockGreen.style.order = '';
+  blockPink.style.order = '';
+  blockGray.style.order = '';
+});
+blockBlue.addEventListener('click', (event) => {
+  event.target.style.order = 1;
+  blockRed.style.order = '';
+  blockGreen.style.order = '';
+  blockPink.style.order = '';
+  blockGray.style.order = '';
+});
+blockGreen.addEventListener('click', (event) => {
+  event.target.style.order = 1;
+  blockRed.style.order = '';
+  blockBlue.style.order = '';
+  blockPink.style.order = '';
+  blockGray.style.order = '';
+});
+blockPink.addEventListener('click', (event) => {
+  event.target.style.order = 1;
+  blockBlue.style.order = '';
+  blockRed.style.order = '';
+  blockGreen.style.order = '';
+  blockGray.style.order = '';
+});
+blockGray.addEventListener('click', (event) => {
+  event.target.style.order = 1;
+  blockBlue.style.order = '';
+  blockRed.style.order = '';
+  blockGreen.style.order = '';
+  blockPink.style.order = '';
+});
