@@ -1,10 +1,3 @@
-// Variables for each individual block
-const blockRed = document.querySelector('.block--red');
-const blockBlue = document.querySelector('.block--blue');
-const blockGreen = document.querySelector('.block--green');
-const blockPink = document.querySelector('.block--pink');
-const blockGray = document.querySelector('.block--gray');
-
 // Variables for the traveler section
 let rockets = document.querySelectorAll('.block');
 let currentPosition = 0;
@@ -52,38 +45,10 @@ rockets.forEach(stop => stop.addEventListener('mouseup', function () {
 }))
 
 // On click, moves the block clicked to the top
-blockRed.addEventListener('click', (event) => {
-  event.target.style.order = 1;
-  blockBlue.style.order += 1;
-  blockGreen.style.order += 1;
-  blockPink.style.order += 1;
-  blockGray.style.order += 1;
-});
-blockBlue.addEventListener('click', (event) => {
-  event.target.style.order = 1;
-  blockRed.style.order += 1;
-  blockGreen.style.order += 1;
-  blockPink.style.order += 1;
-  blockGray.style.order += 1;
-});
-blockGreen.addEventListener('click', (event) => {
-  event.target.style.order = 1;
-  blockRed.style.order += 1;
-  blockBlue.style.order += 1;
-  blockPink.style.order += 1;
-  blockGray.style.order += 1;
-});
-blockPink.addEventListener('click', (event) => {
-  event.target.style.order = 1;
-  blockBlue.style.order += 1;
-  blockRed.style.order += 1;
-  blockGreen.style.order += 1;
-  blockGray.style.order += 1;
-});
-blockGray.addEventListener('click', (event) => {
-  event.target.style.order = 1;
-  blockBlue.style.order += 1;
-  blockRed.style.order += 1;
-  blockGreen.style.order += 1;
-  blockPink.style.order += 1;
-});
+rockets.forEach(moveUp => moveUp.addEventListener('click', (event) => {
+  if (event = event.target.style.order = '') {
+     event.target.style.order = 1;
+  } else {
+  rockets.forEach(upOne => upOne.style.order += 1);
+  }
+}))
