@@ -44,7 +44,7 @@ rockets.forEach(stop => stop.addEventListener('mouseup', function () {
   goingToMars = false;
 }))
 
-// On click, moves the block clicked to the top
+// On click, moves the rocket clicked to the top
 rockets.forEach(moveUp => moveUp.addEventListener('click', (event) => {
   if (event = event.target.style.order = '') {
      event.target.style.order = 1;
