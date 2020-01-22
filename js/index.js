@@ -26,7 +26,7 @@ paragraph.forEach(tag => tag.addEventListener('mouseleave', (event) => {
   event.target.style.color = 'purple';
 }));
 
-// The font truns green on keydown
+// The font turns green on keydown
 window.addEventListener('keydown', (event) => { event.target.style.color = 'green';});
 
 // The font turns back to black on keyup
