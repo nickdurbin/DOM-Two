@@ -26,7 +26,7 @@ paragraph.forEach(tag => tag.addEventListener('mouseleave', (event) => {
   event.target.style.color = 'purple';
 }));
 
-// The font truns green on keydown
+// The font turns green on keydown
 window.addEventListener('keydown', (event) => { event.target.style.color = 'green';});
 
 // The font turns back to black on keyup
@@ -54,6 +54,7 @@ button.addEventListener('click', (event) => { event.target.style.transform = 'sc
 destination.forEach(section => section.addEventListener('click', (event) => {
   event.stopPropagation()
   event.target.style.backgroundColor = "lightblue";
+  event.target.style.height = "87px";
 }));
 
 // GSAP interactions
@@ -66,3 +67,17 @@ tl.fromTo(content, 1, { height: "0%" }, { height: "90%", ease: Power2.easeInOut 
 // Propgation and Prevent Handler Variables (not used)
 let stopPropHandler = (event) => { event.stopPropagation() };
 let preventHandler = (event) => { event.preventDefault() };
+
+
+
+
+
+
+
+const boxes = document.querySelectorAll(".box-overlay") 
+
+boxes.forEach(box => box.addEventListener('mouseover', (event) => {
+  event.stopPropagation()
+  event.target.style.cssText = "87px";
+  event.target.style.backgroundColor = "whateverthefuck"
+}))
